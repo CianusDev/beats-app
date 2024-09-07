@@ -8,13 +8,14 @@ import Image from 'next/image'
 import IndicatorCart from './indicator-card'
 import {motion} from 'framer-motion'
 import { Separator } from './ui/separator'
+import HyperText from './magicui/hyper-text'
 
 const FirstSection = () => {
   return (
-    <section className='w-full relative   bg-black/80 flex flex-col items-center '>
-        <nav className='flex px-4  container items-center z-50 h-20 text-white justify-between '>
+    <section className='w-full relative lg:rounded-es-full max-lg:rounded-b-3xl lg:rounded-se-full border-2   bg-white z-30 flex flex-col items-center '>
+        <nav className='flex px-4  container items-center z-50 h-20 justify-between '>
             <Image src={"/brand-beats.png"} alt='logo' height={40} width={40} className='rounded-full bg-white p-1'/>
-            <div className='flex gap-6 max-md:hidden text-white/50 items-center'>
+            <div className='flex gap-6 max-md:hidden text-muted-foreground items-center'>
                 <Link href={"#"}>Discover</Link>
                 <Link href={"#"} className='mx-6'>Shop</Link>
                 <Link href={"#"}>Support</Link>
@@ -22,7 +23,7 @@ const FirstSection = () => {
             <div className='flex items-center gap-2'>
                 <Button 
                 size={"icon"}
-                variant={"ghost"}
+                variant={"outline"}
                 className='rounded-full'
                 >
                     <SearchIcon/>
@@ -30,34 +31,43 @@ const FirstSection = () => {
 
                 <Button 
                 size={"icon"}
-                variant={"ghost"}
+                variant={"outline"}
                 className='rounded-full md:hidden'
                 >
                     <MenuIcon/>
                 </Button>
             </div>
         </nav>
-        <div className='w-full h-full   items-center flex-col justify-center  flex'>
+        <div className='w-full h-full  relative  items-center flex-col justify-center  flex'>
+        {/* <HyperText
+                        className="text-9xl absolute  text-red-500 right-0 top-0 z-40 font-bold max-md:text-7xl "
+                        text="text"
+                    /> */}
             {/* texte accrocheur */}
             <div className='absolute w-full flex items-center gap-6 md:pb-4 justify-center md:h-96 max-md:flex-col h-72 top-0'>
-                <motion.h1 
+                {/* <motion.h1 
                 initial={{opacity:0}}
                 whileInView={{opacity:1}}
                 transition={{
                     duration:1
                 }}
-                className='text-9xl font-bold max-md:text-7xl text-white'>BEATS</motion.h1>
+                className=''>BEATS</motion.h1> */}
+                <HyperText
+                        className="text-9xl  z-50 font-bold max-md:text-7xl "
+                        text="BEATS"
+                    />
+
                 <motion.img 
                 initial={{opacity:0}}
                 whileInView={{opacity:1}}
                 transition={{
                     duration:1.2
                 }} 
-                src={"/spotify.png"} alt='logo-spotify' height={50} width={50} className='max-md:hidden rounded-full'/>
+                src={"/spotify.png"} alt='logo-spotify' height={50} width={50} className='max-md:hidden bg-black p-1 rounded-full'/>
             </div>
             {/* image de fond */}
             <img
-            src='/spotify-logo-png-white.png'className=' absolute  w-[400px]  opacity-10  object-contain object-center'/>
+            src='/spotify-logo-black.png'className=' absolute  w-[600px]  opacity-10  object-contain object-center'/>
             {/* eraphone */}
             <div className='relative flex items-center justify-center'>
                 <IndicatorCart
@@ -85,21 +95,20 @@ const FirstSection = () => {
                 src='/earphone.png' width={800} height={300} className='rounded-full z-30 scale-[.75] top-0 object-cover object-center'/>
             </div>
             <div className='relative flex justify-center items-center w-full px-4'>
-                <div className='bg-[#333333] absolute flex items-center gap-4 rounded-full p-4'>
+                <div className='bg-white  absolute flex items-center gap-4 rounded-full p-4'>
                     <Button
-                    className=' bg-[#1fd761] md:h-14 hover:bg-[#1fd761]/50 text-lg md:w-[200px] text-[#333333] font-semibold rounded-full'
+                    className=' bg-[#1fd761] md:h-14 hover:bg-[#1fd761]/90 text-lg md:w-[200px] text-[#333333] font-semibold rounded-full'
                     >
                         Explore
                     </Button>
                     <Button
                     size={"icon"}
-                    variant={"outline"}
+                    // variant={""}
                     className='rounded-full md:h-14 md:w-14' 
                     >
                         <WaypointsIcon/>
                     </Button>
                 </div>
-                <Separator className='bg-muted-foreground/50'/>
             </div>
         </div>
     </section>
