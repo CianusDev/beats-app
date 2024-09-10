@@ -12,7 +12,7 @@ import HyperText from './magicui/hyper-text'
 
 const FirstSection = () => {
   return (
-    <section className='w-full relative lg:rounded-es-full max-lg:rounded-b-3xl lg:rounded-se-full border-2   bg-white z-30 flex flex-col items-center '>
+    <section className='w-full relative  max-lg:rounded-b-3xl  border-2   bg-white z-30 flex flex-col items-center '>
         <nav className='flex px-4  container items-center z-50 h-20 justify-between '>
             <Image src={"/brand-beats.png"} alt='logo' height={40} width={40} className='rounded-full bg-white p-1'/>
             <div className='flex gap-6 max-md:hidden text-muted-foreground items-center'>
